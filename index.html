@@ -2,30 +2,33 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Happy Birthday Deaaa ❤️</title>
+  <title>Happy Birthday Sayangkuuu❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
       margin: 0;
-      font-family: 'Arial', sans-serif;
+      font-family: Arial, sans-serif;
       background: linear-gradient(to right, #ff9a9e, #fad0c4);
       color: white;
       text-align: center;
-      overflow: hidden;
+      overflow-x: hidden;
     }
 
     .container {
-      margin-top: 100px;
+      margin-top: 60px;
+      padding: 20px;
       animation: fadeIn 2s ease-in-out;
     }
 
     h1 {
-      font-size: 40px;
+      font-size: 32px;
       animation: slideDown 1.5s ease;
     }
 
     p {
-      font-size: 20px;
-      margin: 20px;
+      font-size: 18px;
+      margin: 15px;
     }
 
     .btn {
@@ -43,11 +46,24 @@
       display: none;
     }
 
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
     .gallery img {
-      width: 150px;
+      width: 120px;
       margin: 10px;
       border-radius: 15px;
       animation: fadeIn 2s ease;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 24px; }
+      p { font-size: 16px; }
+      .gallery img { width: 100px; }
     }
 
     @keyframes fadeIn {
@@ -61,23 +77,23 @@
     }
   </style>
 </head>
+
 <body>
 
-  <!-- Musik -->
-  <audio autoplay loop>
-    <source src="lagu.mp3.mp3" type="audio/mpeg">
-  </audio>
-
   <div class="container">
-    <h1>Happy Birthday Sayangg ❤️</h1>
-    <p>aku punya sesuatu buat kamu nichhh...</p>
-    <button class="btn" onclick="lanjut()">klik di sini</button>
+    <h1>Happy Birthday Deaaaaa ❤️</h1>
+    <p>Aku punya sesuatu nih buat kamuu 🎉</p>
 
-    <div id="isi" class="hidden">
-      <p>selamat ulang tahun yaa sayangkuu 🥺</p>
-      <p>aku mau ngucapi nmakasih udah hadir di hidup aku</p>
-      <p>doa aku semoga semua yang kamu mau bisa tercapai</p>
-      <p>dan semoga kita selalu bareng terus, I LOVE U SOOOO MUCHH❤️</p>
+    <button class="btn" onclick="showSurprise()">Dibukaa yaa cantikk 🎁</button>
+
+    <div id="surprise" class="hidden">
+      <p>
+        Selamat ulang tahun yaa sayangg 💖<br>
+        aku mau ngucapin makasih udah selalu ada buat aku,<br>
+        aku cuman berharap semoga kamu selalu bahagia,<br>
+        sehat terus, dan semua impian kamu tercapai ✨<br><br>
+        I love you SOOOOOOO MUCHHH MWAHH MWAHH ❤️
+      </p>
 
       <div class="gallery">
         <img src="1.jpg.jpeg">
@@ -88,9 +104,15 @@
     </div>
   </div>
 
+  <!-- Musik -->
+  <audio id="music" src="lagu.mp3.mp3"></audio>
+
   <script>
-    function lanjut() {
-      document.getElementById("isi").classList.remove("hidden");
+    function showSurprise() {
+      document.getElementById("surprise").classList.remove("hidden");
+
+      let music = document.getElementById("music");
+      music.play();
     }
   </script>
 
